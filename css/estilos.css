@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo de la web */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background: url("../img/heaven.jpg") center no-repeat;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.div-principal {
+  background: linear-gradient(135deg, 
+    rgba(30, 25, 85, 0.6),
+    rgba(61, 55, 124, 0.6),
+    rgba(51, 51, 87, 0.6));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 1%;
+  width: 75%;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Seccion principal titulos */
+.sec-question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  color: white;
+  text-align: center;
+}
+
+.tittle-question h1 {
+  font-size: 3vw;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(147, 51, 234, 0.8);
+  letter-spacing: 2px;
+  animation: glow-text 2s ease-in-out infinite;
+}
+
+.tittle-question h2 {
+  font-size: 1.5vw;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+}
+
+/* Animación de brillo en el título */
+@keyframes glow-text {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(147, 51, 234, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(147, 51, 234, 1);
+  }
+}
+
+/* Contenedor de form y bola */
+.div-form-ball {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  padding: 5% 0;
+  flex-wrap: wrap;
+}
+
+.form-ball > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 2vw;
+  padding: 3vh;
+}
+
+.div-temas {
+  display: flex;
+  justify-content: center; 
+  gap: 0.5vw;
+  flex-wrap: wrap;
+}
+
+.btn-tema {
+  padding: 12px 30px;
+  font-size: 0.9vw;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-tema.active {
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.8),
+    rgba(75, 0, 130, 0.8)
+  );
+  box-shadow: 0 0 25px rgba(147, 51, 234, 1);
+  transform: scale(1.05);
+}
+
+#btnGeneral {
+  border: 2px solid rgba(51, 146, 234, 0.8);
+  background: linear-gradient(
+    135deg,
+    rgba(51, 152, 234, 0.3),
+    rgba(0, 50, 130, 0.3)
+  );
+}
+
+#btnAmor {
+  border: 2px solid rgba(234, 51, 121, 0.8);
+  background: linear-gradient(
+    135deg,
+    rgba(232, 85, 112, 0.3),
+    rgba(130, 0, 37, 0.3)
+  );
+}
+
+#btnSalud {
+  border: 2px solid rgba(51, 234, 179, 0.8);
+  background: linear-gradient(
+    135deg,
+    rgba(51, 234, 207, 0.3),
+    rgba(0, 102, 130, 0.3)
+  );
+}
+
+#btnDinero {
+  border: 2px solid rgba(234, 182, 51, 0.8);
+  background: linear-gradient(
+    135deg,
+    rgba(234, 219, 51, 0.3),
+    rgba(130, 117, 0, 0.3)
+  );
+}
+
+.btn-tema:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.6),
+    rgba(75, 0, 130, 0.6)
+  );
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Estilos del input */
+.input-text {
+  width: 30vw;
+  padding: 15px 20px;
+  font-size: 1.1vw;
+  border: 2px solid rgba(147, 51, 234, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.input-text::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-text:focus {
+  outline: none;
+  border-color: rgba(147, 51, 234, 1);
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Estilos del botón */
+.btn-question {
+  padding: 12px 30px;
+  font-size: 1.1vw;
+  font-weight: bold;
+  border: 2px solid rgba(147, 51, 234, 0.8);
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.3),
+    rgba(75, 0, 130, 0.3)
+  );
+  color: white;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-question:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.6),
+    rgba(75, 0, 130, 0.6)
+  );
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-question:active {
+  transform: translateY(0);
+}
+
+/* Output del resultado */
+.output-text.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 10vw;
+  padding: 20px;
+  font-size: 1vw;
+  border-radius: 50%;
+  color: #b19cd9;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Orbitron", sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  animation: appear 3s ease-out;
+  }
+
+.output-text.hide {
+  transform: translateY(-100%);
+}
+
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Contenedor 3D de la bola */
+.div-ball {
+  perspective: 1000px;
+  width: 25vw;
+  height: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+
+
+/* La bola mágica en 3D */
+.magic-ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(200, 100, 255, 0.8),
+    rgba(80, 20, 160, 0.9),
+    rgba(20, 5, 50, 1)
+  );
+  box-shadow:
+    inset -30px -30px 80px rgba(0, 0, 0, 0.8),
+    inset 20px 20px 60px rgba(150, 80, 255, 0.4),
+    0 0 60px rgba(147, 51, 234, 0.6),
+    0 0 100px rgba(147, 51, 234, 0.4),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease;
+  overflow: hidden; /* Evita que las animaciones salgan de la bola */
+}
+
+/* Efecto de líquido esotérico dentro */
+.magic-ball::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(200, 150, 255, 0.6),
+    transparent 70%
+  );
+  animation: liquid-swirl 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Animación del líquido */
+@keyframes liquid-swirl {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Número central */
+.number-ball {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(255, 255, 255, 0.95),
+    rgba(200, 200, 200, 0.9)
+  );
+  color: black;
+  font-size: 5vw;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  box-shadow:
+    inset -5px -5px 15px rgba(0, 0, 0, 0.3),
+    inset 3px 3px 8px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(147, 51, 234, 0.4);
+  letter-spacing: 0px;
+}
+
+/* Animación de agitación */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0, 0) rotateX(0) rotateY(0);
+  }
+  10% {
+    transform: translate(-5px, -5px) rotateX(-5deg) rotateY(-5deg);
+  }
+  20% {
+    transform: translate(5px, -5px) rotateX(5deg) rotateY(5deg);
+  }
+  30% {
+    transform: translate(-5px, 5px) rotateX(-3deg) rotateY(-3deg);
+  }
+  40% {
+    transform: translate(5px, 5px) rotateX(3deg) rotateY(3deg);
+  }
+  50% {
+    transform: translate(-3px, 0) rotateX(-4deg) rotateY(-4deg);
+  }
+  60% {
+    transform: translate(3px, 0) rotateX(4deg) rotateY(4deg);
+  }
+  70% {
+    transform: translate(-4px, 3px) rotateX(-2deg) rotateY(-2deg);
+  }
+  80% {
+    transform: translate(4px, -3px) rotateX(2deg) rotateY(2deg);
+  }
+  90% {
+    transform: translate(-2px, 2px) rotateX(-1deg) rotateY(-1deg);
+  }
+}
+
+.magic-ball.shake {
+  animation: shake 0.8s ease-in-out;
+}
+
+/* Efecto de resplandor cuando responde */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      inset -30px -30px 80px rgba(0, 0, 0, 0.8),
+      inset 20px 20px 60px rgba(150, 80, 255, 0.4),
+      0 0 60px rgba(147, 51, 234, 0.6),
+      0 0 100px rgba(147, 51, 234, 0.4),
+      0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow:
+      inset -30px -30px 80px rgba(0, 0, 0, 0.7),
+      inset 20px 20px 60px rgba(200, 100, 255, 0.6),
+      0 0 80px rgba(147, 51, 234, 0.8),
+      0 0 140px rgba(147, 51, 234, 0.6),
+      0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.magic-ball.glow {
+  animation: glow-pulse 0.8s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .div-form-ball {
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .input-text {
+    width: 80vw;
+    font-size: 16px;
+  }
+
+  .btn-question {
+    font-size: 16px;
+  }
+
+  .div-ball {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .magic-ball {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .number-ball {
+    width: 25vw;
+    height: 25vw;
+    font-size: 12vw;
+  }
+
+  .output-text {
+    width: 80vw;
+    font-size: 16px;
+  }
+
+  .tittle-question h1 {
+    font-size: 6vw;
+  }
+
+  .tittle-question h2 {
+    font-size: 4vw;
+  }
+}
